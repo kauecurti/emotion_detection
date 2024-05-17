@@ -67,7 +67,7 @@ celery -A emotion_detection worker --loglevel=info
 
 #Upload Screen
 
-## <img src="https://github.com/kauecurti/emotion_detection/assets/36936274/338904bd-80cb-4380-8184-f9d65e55f7e6">
+## <img src="https://github.com/kauecurti/emotion_detection/assets/36936274/7ca227ab-3f79-48a2-a158-e3659ea03530">
 
 # Analysis Results
 
