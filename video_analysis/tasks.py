@@ -1,4 +1,3 @@
-# video_analysis/tasks.py
 from celery import shared_task
 from .video_processing import analyze_video
 from django_celery_results.models import TaskResult
