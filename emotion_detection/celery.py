@@ -1,4 +1,3 @@
-# emotion_detection/celery.py
 import os
 from celery import Celery
 
@@ -6,7 +5,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'emotion_detection.settings')
 
 app = Celery('emotion_detection')
 
-# Configuração do Celery
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
 # Definindo o pool como 'solo' diretamente no Celery
