@@ -1,4 +1,3 @@
-# video_analysis/video_processing.py
 import cv2
 from deepface import DeepFace
 
