@@ -1,0 +1,35 @@
+<!-- video_analysis/templates/video_analysis/progress.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Processing Progress</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Processing Progress</h1>
+    <div class="progress">
+        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+    </div>
+</div>
+
+<script>
+    var videoId = "{{ video_id }}";
+    var socket = new WebSocket('ws://' + window.location.host + '/ws/video/' + videoId + '/');
+
+    socket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        var progress = data['progress'];
+
+        $('#progress-bar').css('width', progress + '%').attr('aria-valuenow', progress).text(progress + '%');
+
+        if (progress == 100) {
+            window.location.href = "{% url 'results' video_id %}";
+        }
+    };
+</script>
+</body>
+</html>
