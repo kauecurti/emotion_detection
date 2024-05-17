@@ -71,7 +71,7 @@ celery -A emotion_detection worker --loglevel=info
 
 # Analysis Results
 
-## <img src="https://github.com/kauecurti/emotion_detection/assets/36936274/8adf1cb7-3798-4b92-9959-13edf570a935">
+## <img src="https://github.com/kauecurti/emotion_detection/assets/36936274/338904bd-80cb-4380-8184-f9d65e55f7e6">
 ## Project Structure
 ```bash
 emotion_detection/
